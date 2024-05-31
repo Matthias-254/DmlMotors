@@ -7,9 +7,10 @@ use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('welcome');
 
-route::get('/posts', [PostController::class, 'index'])->name('posts.index');
+route::get('/posts', [PostController::class, 'index'])
+        ->middleware(['auth', 'verified'])->name('posts.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
