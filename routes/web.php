@@ -3,10 +3,13 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\PostController;
 
 Route::get('/', function () {
     return view('welcome');
 });
+
+route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -20,5 +23,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-route::get('admin/dashboard', [DashboardController::class, 'index'])
-            ->middleware(['auth','admin']);
+route::get('admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth','admin']);
