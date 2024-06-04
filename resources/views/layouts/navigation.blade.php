@@ -15,6 +15,11 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    @if(Auth::user()->usertype === 'admin')
+                        <x-nav-link :href="route('admin.dashboard')">
+                            {{ __('Admin Panel') }}
+                        </x-nav-link>
+                    @endif
                     <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
                         {{ __('Latest News') }}
                     </x-nav-link>
@@ -73,8 +78,13 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
-                {{ __('Latest News') }}
+            @if(Auth::user()->usertype === 'admin')
+                        <x-responsive-nav-link :href="route('admin.dashboard')">
+                            {{ __('Admin Panel') }}
+                        </x-responsive-nav-link>
+            @endif
+            <x-responsive-nav-link :href="route('admin.dashboard')">
+                {{ __('admin dashboard') }}
             </x-responsive-nav-link>
         </div>
 

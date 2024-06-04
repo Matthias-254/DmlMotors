@@ -9,8 +9,10 @@ Route::get('/', function () {
     return view('welcome');
 })->name('welcome');
 
-route::get('/posts', [PostController::class, 'index'])
+Route::get('/posts', [PostController::class, 'index'])
         ->middleware(['auth', 'verified'])->name('posts.index');
+
+Route::resource('posts', PostController::class);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -24,4 +26,4 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
-route::get('admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth','admin']);
+route::get('admin/dashboard', [DashboardController::class, 'index'])->middleware(['auth','admin'])->name('admin.dashboard');
