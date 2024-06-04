@@ -15,13 +15,25 @@
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
+                        {{ __('Latest News') }}
+                    </x-nav-link>
                     @if(Auth::user()->usertype === 'admin')
                         <x-nav-link :href="route('admin.dashboard')">
                             {{ __('Admin Panel') }}
                         </x-nav-link>
+                        <x-nav-link :href="route('posts.create')">
+                            {{ __('Create Post') }}
+                        </x-nav-link>
                     @endif
-                    <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
-                        {{ __('Latest News') }}
+                    <x-nav-link :href="route('info.about')" :active="request()->routeIs('info.about')">
+                        {{ __('About') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('info.faq')" :active="request()->routeIs('info.faq')">
+                        {{ __('FAQ') }}
+                    </x-nav-link>
+                    <x-nav-link :href="route('info.contact')" :active="request()->routeIs('info.contact')">
+                        {{ __('Contact Us') }}
                     </x-nav-link>
                 </div>
             </div>
@@ -78,13 +90,25 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('posts.index')">
+                {{ __('Latest News') }}
+            </x-responsive-nav-link>
             @if(Auth::user()->usertype === 'admin')
-                        <x-responsive-nav-link :href="route('admin.dashboard')">
-                            {{ __('Admin Panel') }}
-                        </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('admin.dashboard')">
+                    {{ __('Admin Panel') }}
+                </x-responsive-nav-link>
+                <x-responsive-nav-link :href="route('posts.create')">
+                    {{ __('Create Post') }}
+                </x-responsive-nav-link>
             @endif
-            <x-responsive-nav-link :href="route('admin.dashboard')">
-                {{ __('admin dashboard') }}
+            <x-responsive-nav-link :href="route('info.about')" :active="request()->routeIs('info.about')">
+                {{ __('About') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('info.faq')" :active="request()->routeIs('info.faq')">
+                {{ __('FAQ') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('info.contact')" :active="request()->routeIs('info.contact')">
+                {{ __('Contact Us') }}
             </x-responsive-nav-link>
         </div>
 

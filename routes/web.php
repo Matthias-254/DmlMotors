@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\InfoController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -12,7 +13,16 @@ Route::get('/', function () {
 Route::get('/posts', [PostController::class, 'index'])
         ->middleware(['auth', 'verified'])->name('posts.index');
 
+Route::get('/posts/create', [PostController::class, 'create'])
+        ->middleware(['auth', 'admin'])->name('posts.create');
+
 Route::resource('posts', PostController::class);
+
+Route::get('/about', [InfoController::class, 'about'])->name('info.about');
+
+Route::get('/faq', [InfoController::class, 'faq'])->name('info.faq');
+
+Route::get('/contact', [InfoController::class, 'contact'])->name('info.contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
