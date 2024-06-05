@@ -19,10 +19,10 @@
                         {{ __('Latest News') }}
                     </x-nav-link>
                     @if(Auth::user()->usertype === 'admin')
-                        <x-nav-link :href="route('admin.dashboard')">
+                        <x-nav-link :href="route('admin.dashboard') :active="request()->routeIs('admin.dashboard')">
                             {{ __('Admin Panel') }}
                         </x-nav-link>
-                        <x-nav-link :href="route('posts.create')">
+                        <x-nav-link :href="route('posts.create') :active="request()->routeIs('posts.create')">
                             {{ __('Create Post') }}
                         </x-nav-link>
                     @endif
@@ -90,14 +90,14 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('posts.index')">
+            <x-responsive-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
                 {{ __('Latest News') }}
             </x-responsive-nav-link>
             @if(Auth::user()->usertype === 'admin')
-                <x-responsive-nav-link :href="route('admin.dashboard')">
+                <x-responsive-nav-link :href="route('admin.dashboard')" :active="request()->routeIs('admin.dashboard')">
                     {{ __('Admin Panel') }}
                 </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('posts.create')">
+                <x-responsive-nav-link :href="route('posts.create')" :active="request()->routeIs('posts.create')">
                     {{ __('Create Post') }}
                 </x-responsive-nav-link>
             @endif
