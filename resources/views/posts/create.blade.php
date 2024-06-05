@@ -24,7 +24,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 dark:text-gray-100">
-                    <form action="POST" action="{{route('posts.store')}}">
+                    <form method="POST" action="{{route('posts.store')}}">
                         @csrf
                         <label for="title">Title</label><br>
                         <input type="text" id="title" name="title" value="{{old('title')}}" required><br><br>

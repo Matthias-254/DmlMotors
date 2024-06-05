@@ -20,16 +20,17 @@ class PostController extends Controller
 
     public function store(Request $request)
     {
-        $validation = $request->validate([
+        $request->validate([
             'title' => 'required',
             'content' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         ]);
 
         $post = new Post;
-        $post->title = $validation['title'];
-        $post->content = $validation['content'];
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->image = $request->image;
         $post->save();
-
-        return redirect()->route('posts.index')->with('success', 'Post created successfully.');
+        return redirect()->route('posts.index');
     }
 }

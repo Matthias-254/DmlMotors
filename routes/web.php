@@ -20,9 +20,16 @@ Route::get('/posts/create', [PostController::class, 'create'])
 
 Route::resource('posts', PostController::class);
 
+Route::get('/faq', [FAQController::class, 'index'])->name('faq.index');
+
+Route::get('/faq/create', [FAQController::class, 'create'])
+        ->middleware(['auth', 'admin'])->name('faq.create');
+
+Route::resource('faq', FAQController::class);
+
 Route::get('/about', [InfoController::class, 'about'])->name('info.about');
 
-Route::get('/faq', [FAQController::class, 'faq'])->name('faq.index');
+
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact.index');
 
