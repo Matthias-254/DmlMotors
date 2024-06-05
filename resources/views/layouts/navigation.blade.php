@@ -29,10 +29,10 @@
                     <x-nav-link :href="route('info.about')" :active="request()->routeIs('info.about')">
                         {{ __('About') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('info.faq')" :active="request()->routeIs('info.faq')">
+                    <x-nav-link :href="route('faq.index')" :active="request()->routeIs('faq.index')">
                         {{ __('FAQ') }}
                     </x-nav-link>
-                    <x-nav-link :href="route('info.contact')" :active="request()->routeIs('info.contact')">
+                    <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
                         {{ __('Contact Us') }}
                     </x-nav-link>
                 </div>
@@ -104,10 +104,10 @@
             <x-responsive-nav-link :href="route('info.about')" :active="request()->routeIs('info.about')">
                 {{ __('About') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('info.faq')" :active="request()->routeIs('info.faq')">
+            <x-responsive-nav-link :href="route('faq.index')" :active="request()->routeIs('faq.index')">
                 {{ __('FAQ') }}
             </x-responsive-nav-link>
-            <x-responsive-nav-link :href="route('info.contact')" :active="request()->routeIs('info.contact')">
+            <x-responsive-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
                 {{ __('Contact Us') }}
             </x-responsive-nav-link>
         </div>

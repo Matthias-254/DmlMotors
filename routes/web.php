@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\FAQController;
 use App\Http\Controllers\PostController;
 use App\Http\Controllers\InfoController;
 
@@ -20,9 +22,9 @@ Route::resource('posts', PostController::class);
 
 Route::get('/about', [InfoController::class, 'about'])->name('info.about');
 
-Route::get('/faq', [InfoController::class, 'faq'])->name('info.faq');
+Route::get('/faq', [FAQController::class, 'faq'])->name('faq.index');
 
-Route::get('/contact', [InfoController::class, 'contact'])->name('info.contact');
+Route::get('/contact', [ContactController::class, 'contact'])->name('contact.index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
