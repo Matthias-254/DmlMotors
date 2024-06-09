@@ -16,20 +16,17 @@ Route::get('/posts', [PostController::class, 'index'])
         ->middleware(['auth', 'verified'])->name('posts.index');
 
 Route::get('/posts/create', [PostController::class, 'create'])
-        ->middleware(['auth', 'admin'])->name('posts.create');
+        ->middleware(['auth','admin'])->name('posts.create');
 
 Route::resource('posts', PostController::class);
 
 Route::get('/faq', [FAQController::class, 'index'])->name('faq.index');
 
-Route::get('/faq/create', [FAQController::class, 'create'])
-        ->middleware(['auth', 'admin'])->name('faq.create');
+Route::get('/faq/create', [FAQController::class, 'create'])->name('faq.create');
 
 Route::resource('faq', FAQController::class);
 
 Route::get('/about', [InfoController::class, 'about'])->name('info.about');
-
-
 
 Route::get('/contact', [ContactController::class, 'contact'])->name('contact.index');
 
