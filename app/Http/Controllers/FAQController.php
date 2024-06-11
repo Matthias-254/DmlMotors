@@ -13,7 +13,7 @@ class FAQController extends Controller implements HasMiddleware
     {
         return [
             'auth',
-            new Middleware('admin', only: ['create']),
+            new Middleware('admin', except: ['index']),
         ];
     }
 
@@ -37,6 +37,26 @@ class FAQController extends Controller implements HasMiddleware
         $faq->question = $request->question;
         $faq->answer = $request->answer;
         $faq->save();
+        return redirect()->route('faq.index');
+    }
+
+    public function edit($id){
+        $faq = FAQ::find($id);
+        return view('faq.edit', compact('faq'));
+    }
+
+    public function update($id, Request $request){
+        $faq = FAQ::find($id);
+
+        $request->validate([
+            'question' => 'required',
+            'answer' => 'required'
+        ]);
+
+        $faq->question = $request->question;
+        $faq->answer = $request->answer;
+        $faq->save();
+
         return redirect()->route('faq.index');
     }
 }

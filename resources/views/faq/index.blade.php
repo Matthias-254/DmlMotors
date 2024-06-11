@@ -14,6 +14,9 @@
                             Q: {{ $faq->question }} <br>
                             A: {{ $faq->answer }}
                         </p>
+                        @if(Auth::user()->usertype === 'admin')
+                        <a href="{{ route('faq.edit', $faq->id) }}">Edit FAQ</a>
+                        @endif
                         <br><hr><br>
                     @endforeach
                 </div>

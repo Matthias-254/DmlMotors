@@ -24,6 +24,8 @@ Route::get('/faq', [FAQController::class, 'index'])->name('faq.index');
 
 Route::get('/faq/create', [FAQController::class, 'create'])->name('faq.create');
 
+Route::get('/faq/{id}/edit', [FAQController::class, 'edit'])->name('faq.edit');
+
 Route::resource('faq', FAQController::class);
 
 Route::get('/about', [InfoController::class, 'about'])->name('info.about');

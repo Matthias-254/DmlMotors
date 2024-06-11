@@ -30,8 +30,8 @@
                         <input type="text" id="title" name="title" value="{{old('title')}}" required><br><br>
                         <label for="content">Content</label><br>
                         <textarea name="content" id="content" cols="30" rows="10" value="{{old('content')}}" required></textarea><br><br>
-                        <label for="image">Image</label><br>
-                        <input type="file" id="image" name="image" required><br><br>
+                        <label for="image">Link to image</label><br>
+                        <input type="text" id="image" name="image" required><br><br>
                         <button type="submit" id="button">
                             Add post
                         </button>
