@@ -32,6 +32,8 @@ Route::get('/about', [InfoController::class, 'about'])->name('info.about');
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 
+Route::resource('contact', ContactController::class);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
