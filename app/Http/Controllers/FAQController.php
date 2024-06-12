@@ -59,4 +59,10 @@ class FAQController extends Controller implements HasMiddleware
 
         return redirect()->route('faq.index');
     }
+
+    public function destroy($id){
+        $faq = FAQ::find($id);
+        $faq->delete();
+        return redirect()->route('faq.index');
+    }
 }

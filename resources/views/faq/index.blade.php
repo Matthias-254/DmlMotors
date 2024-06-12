@@ -1,4 +1,15 @@
 <x-app-layout>
+    <style>
+        #faq-del{
+            color: red;
+            float: right;
+        }
+
+        #faq-edit{
+            color: yellowgreen;
+        }
+    </style>
+
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{("Welcome on the FAQ page!")}}
@@ -15,7 +26,12 @@
                             A: {{ $faq->answer }}
                         </p>
                         @if(Auth::user()->usertype === 'admin')
-                        <a href="{{ route('faq.edit', $faq->id) }}">Edit FAQ</a>
+                        <a href="{{ route('faq.edit', $faq->id) }}" id="faq-edit">Edit FAQ</a>
+                        <form method="POST" action="{{route('faq.destroy', $faq->id)}}">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Delete faq" id="faq-del" onclick="return confirm('delete faq?');">
+                        </form>
                         @endif
                         <br><hr><br>
                     @endforeach
