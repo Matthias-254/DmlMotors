@@ -30,7 +30,7 @@ Route::resource('faq', FAQController::class);
 
 Route::get('/about', [InfoController::class, 'about'])->name('info.about');
 
-Route::get('/contact', [ContactController::class, 'contact'])->name('contact.index');
+Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

@@ -37,7 +37,7 @@
                             {{ __('Create FAQ') }}
                         </x-nav-link>
                     @endif
-                    <x-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
+                    <x-nav-link :href="route('contact.create')" :active="request()->routeIs('contact.create')">
                         {{ __('Contact Us') }}
                     </x-nav-link>
                 </div>
@@ -117,7 +117,7 @@
                     {{ __('Create FAQ') }}
                 </x-responsive-nav-link>
             @endif
-            <x-responsive-nav-link :href="route('contact.index')" :active="request()->routeIs('contact.index')">
+            <x-responsive-nav-link :href="route('contact.create')" :active="request()->routeIs('contact.create')">
                 {{ __('Contact Us') }}
             </x-responsive-nav-link>
         </div>
