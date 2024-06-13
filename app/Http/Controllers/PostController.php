@@ -33,7 +33,7 @@ class PostController extends Controller implements HasMiddleware
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required',
+            'image' => 'required'
         ]);
 
         $post = new Post;
