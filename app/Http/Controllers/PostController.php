@@ -43,4 +43,31 @@ class PostController extends Controller implements HasMiddleware
         $post->save();
         return redirect()->route('posts.index');
     }
+
+    public function edit($id){
+        $posts = Post::find($id);
+        return view('posts.edit', compact('posts'));
+    }
+
+    public function update($id, Request $request){
+        $post = Post::find($id);
+
+        $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+            'image_path' => 'required'
+        ]);
+
+        $post->title = $request->title;
+        $post->content = $request->content;
+        $post->image_path = $request->image_path;
+        $post->save();
+        return redirect()->route('posts.index');
+    }
+
+    public function destroy($id){
+        $post = Post::find($id);
+        $post->delete();
+        return redirect()->route('posts.index');
+    }
 }

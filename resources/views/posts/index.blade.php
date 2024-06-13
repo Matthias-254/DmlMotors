@@ -1,6 +1,17 @@
 <x-app-layout>
     <style>
-        
+        #post-del{
+            color: red;
+            float: right;
+        }
+
+        #post-edit{
+            color: yellowgreen;
+        }
+
+        #post-del:hover{
+            cursor: pointer;
+        }
     </style>
 
     <x-slot name="header">
@@ -18,7 +29,15 @@
                         <h3>{{$post->title}}</h3>
                         <p>{{$post->content}}</p>
                         <p>Gepost op {{$post->created_at->format('d/m/y \o\m H:i')}}</p>
-                        <hr>
+                        @if(Auth::user()->usertype === 'admin')
+                        <a href="{{ route('posts.edit', $post->id) }}" id="post-edit">Edit POST</a>
+                        <form method="POST" action="{{route('posts.destroy', $post->id)}}">
+                            @csrf
+                            @method('DELETE')
+                            <input type="submit" value="Delete Post" id="post-del" onclick="return confirm('delete post?');">
+                        </form>
+                        @endif
+                        <br><hr><br>
                     @endforeach
                 </div>
             </div>

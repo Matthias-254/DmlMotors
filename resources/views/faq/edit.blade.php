@@ -14,7 +14,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 dark:text-gray-100">
-                    Add new FAQ:
+                    Edit the FAQ:
                     <form method="POST" action="{{route ('faq.update', $faq->id)}}">
                         @csrf
                         @method('PUT')
