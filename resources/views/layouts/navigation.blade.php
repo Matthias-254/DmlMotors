@@ -26,6 +26,9 @@
                             {{ __('Create Post') }}
                         </x-nav-link>
                     @endif
+                    <x-nav-link :href="route('info.userlist')" :active="request()->routeIs('info.userlist')">
+                        {{ __('Users list') }}
+                    </x-nav-link>
                     <x-nav-link :href="route('info.about')" :active="request()->routeIs('info.about')">
                         {{ __('About') }}
                     </x-nav-link>
@@ -106,6 +109,9 @@
                     {{ __('Create Post') }}
                 </x-responsive-nav-link>
             @endif
+            <x-responsive-nav-link :href="route('info.userlist')" :active="request()->routeIs('info.userlist')">
+                {{ __('User list') }}
+            </x-responsive-nav-link>
             <x-responsive-nav-link :href="route('info.about')" :active="request()->routeIs('info.about')">
                 {{ __('About') }}
             </x-responsive-nav-link>

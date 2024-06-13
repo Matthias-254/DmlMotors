@@ -16,6 +16,8 @@ Route::get('/posts', [PostController::class, 'index'])->name('posts.index');
 
 Route::get('/posts/create', [PostController::class, 'create'])->name('posts.create');
 
+Route::get('/posts/{id}/edit', [PostController::class, 'edit'])->name('posts.edit');
+
 Route::resource('posts', PostController::class);
 
 Route::get('/faq', [FAQController::class, 'index'])->name('faq.index');
@@ -27,6 +29,8 @@ Route::get('/faq/{id}/edit', [FAQController::class, 'edit'])->name('faq.edit');
 Route::resource('faq', FAQController::class);
 
 Route::get('/about', [InfoController::class, 'about'])->name('info.about');
+
+Route::get('/userlist', [InfoController::class, 'userlist'])->name('info.userlist');
 
 Route::get('/contact', [ContactController::class, 'create'])->name('contact.create');
 
