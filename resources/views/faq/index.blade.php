@@ -8,6 +8,10 @@
         #faq-edit{
             color: yellowgreen;
         }
+
+        #faq-del:hover{
+            cursor: pointer;
+        }
     </style>
 
     <x-slot name="header">

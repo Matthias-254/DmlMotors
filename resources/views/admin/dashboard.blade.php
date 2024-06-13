@@ -27,7 +27,7 @@
 
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            {{("You're logged in!")}}
+            {{("You're logged in admin!")}}
         </h2>
     </x-slot>
 

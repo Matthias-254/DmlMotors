@@ -1,4 +1,9 @@
 <x-app-layout>
+    <style>
+        input{
+            color: black;
+        }
+    </style>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{("Here you can create a new FAQ!")}}
@@ -12,10 +17,10 @@
                     Add new FAQ:
                     <form method="POST" action="{{route ('faq.store')}}">
                         @csrf
-                        <label for="question" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Question:</label>
-                        <input type="text" name="question" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 leading-tight focus:outline-none focus:shadow-outline" id="question" placeholder="Enter question" value="{{old('question')}}" required>
-                        <label for="answer" class="block text-gray-700 dark:text-gray-300 text-sm font-bold mb-2">Answer:</label>
-                        <input type="text" name="answer" class="shadow appearance-none border border rounded w-full py-2 px-3 text-gray-700 dark:text-gray-300 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="answer" placeholder="Enter answer" value="{{old('answer')}}" required>
+                        <label for="question" class="block  text-sm font-bold mb-2">Question:</label>
+                        <input type="text" name="question" class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline" id="question" placeholder="Enter question" value="{{old('question')}}" required>
+                        <label for="answer" class="block  text-sm font-bold mb-2">Answer:</label>
+                        <input type="text" name="answer" class="shadow appearance-none border border rounded w-full py-2 px-3 mb-3 leading-tight focus:outline-none focus:shadow-outline" id="answer" placeholder="Enter answer" value="{{old('answer')}}" required>
                         <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">
                             Create FAQ
                         </button>
