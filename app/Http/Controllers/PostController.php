@@ -33,13 +33,13 @@ class PostController extends Controller implements HasMiddleware
         $request->validate([
             'title' => 'required',
             'content' => 'required',
-            'image' => 'required'
+            'image_path' => 'required'
         ]);
 
         $post = new Post;
         $post->title = $request->title;
         $post->content = $request->content;
-        $post->image = $request->image;
+        $post->image_path = $request->image_path;
         $post->save();
         return redirect()->route('posts.index');
     }
