@@ -18,7 +18,7 @@
         #title, #content, #image_path{
             color: black;
             margin-top: 10px;
-            margin-bottom: 20px
+            margin-bottom: 20px;
         }
 
         h1{
