@@ -32,12 +32,19 @@
             font-size: 1.7rem;
             font-weight: bold;
         }
-        #groen{
+        .groen{
             color: #4caf50;
         }
         #log{
             text-align: center;
             animation: glow 3s infinite;
+        }
+
+        h1{
+            font-size: 2rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 30px;
         }
 
         @keyframes glow {
@@ -61,13 +68,12 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h2>Welcome to the admin Panel! Here you can see <span id="groen">info </span>about the website:</h2>
+                    <h2>Welcome to the admin Panel! Here you can see <span class="groen">info </span>about the website:</h2>
                 </div>
             </div>
             <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg" id="deel">
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <h1>Alle contact verzoeken:</h1>
-                    <hr>
+                    <h1>Alle <span class="groen">contact</span> verzoeken:</h1>
                     @foreach ($contact as $contacts)
                         <p id="boven"><span class="span">Message: </span>{{ $contacts->message }}</p>
                         <p><span class="span">From: </span>{{ $contacts->user->email }}</p>
