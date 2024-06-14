@@ -1,3 +1,14 @@
+This project is made by Matthias Lannoo.
+The code for this project is on my github: https://github.com/Matthias-254/DmlMotors
+The name of the database is "dmlmotors".
+For this project I have used some sources:
+• For the admin middleware I Used this video: https://www.youtube.com/watch?v=G3UeClZPR4k
+• I also used the information that is available on the laravel website: https://laravel.com/docs/11.x/releases
+• When I encountered some minor problems, my teacher sometimes helped me fix them.
+• The last resource I use was the available material on canvas for this course.
+
+-- Standard laravel README:
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
