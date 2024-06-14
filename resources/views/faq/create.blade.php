@@ -17,6 +17,8 @@
                     Add new FAQ:
                     <form method="POST" action="{{route ('faq.store')}}">
                         @csrf
+                        <label for="category" class="block  text-sm font-bold mb-2">Category:</label>
+                        <input type="text" name="category" class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline" id="category" placeholder="Enter category" value="{{old('category')}}" required>
                         <label for="question" class="block  text-sm font-bold mb-2">Question:</label>
                         <input type="text" name="question" class="shadow appearance-none border rounded w-full py-2 px-3  leading-tight focus:outline-none focus:shadow-outline" id="question" placeholder="Enter question" value="{{old('question')}}" required>
                         <label for="answer" class="block  text-sm font-bold mb-2">Answer:</label>

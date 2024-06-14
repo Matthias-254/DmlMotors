@@ -20,6 +20,7 @@ class FAQAdd extends Seeder
         FAQ::create([
             'question' => 'What are the opening hours of DML Motors?',
             'answer' => 'We are open from Monday to Friday from 8:00 to 17:00.',
+            'category' => 'hours',
         ]);
         FAQ::create([
             'question' => 'Do I have to go to the technical inspection myself after a service or does DML motors do that?',

@@ -18,7 +18,7 @@ class FAQController extends Controller implements HasMiddleware
     }
 
     public function index(){
-        $faqs = FAQ::all();
+        $faqs = FAQ::all()->groupBy('category');
         return view('faq.index', compact('faqs'));
     }
 
@@ -30,12 +30,14 @@ class FAQController extends Controller implements HasMiddleware
         
         $request->validate([
             'question' => 'required',
-            'answer' => 'required'
+            'answer' => 'required',
+            'category' => 'required'
         ]);
 
         $faq =new FAQ;
         $faq->question = $request->question;
         $faq->answer = $request->answer;
+        $faq->category = $request->category;
         $faq->save();
         return redirect()->route('faq.index');
     }
@@ -50,11 +52,13 @@ class FAQController extends Controller implements HasMiddleware
 
         $request->validate([
             'question' => 'required',
-            'answer' => 'required'
+            'answer' => 'required',
+            'category' => 'required'
         ]);
 
         $faq->question = $request->question;
         $faq->answer = $request->answer;
+        $faq->category = $request->category;
         $faq->save();
 
         return redirect()->route('faq.index');
